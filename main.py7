@@ -6,3 +6,84 @@ Bill Gates"""
     print(quote)
 display_quote()
 ----------------------------------------------------
+
+def display_even_numbers(start, end):
+    if start > end:
+        start, end = end, start 
+    print(f"Парні числа між {start} і {end}:")
+    for num in range(start, end + 1):
+        if num % 2 == 0:
+            print(num, end=" ")ї:
+start_num = int(input("Введіть початкове число: "))
+end_num = int(input("Введіть кінцеве число: "))
+display_even_numbers(start_num, end_num)
+-------------------------------------------------------
+
+
+def display_square(side_length, symbol, filled):
+    if filled:
+        for i in range(side_length):
+            print(symbol * side_length)
+    else:
+        for i in range(side_length):
+            if i == 0 or i == side_length - 1:
+                print(symbol * side_length)
+            else:
+                print(symbol + " " * (side_length - 2) + symbol)
+side = int(input("Введіть довжину сторони квадрата: "))
+sym = input("Введіть символ для відображення: ")
+is_filled = input("Введіть True для заповненого квадрата або False для порожнього: ").lower()
+if is_filled == "true":
+    filled = True
+else:
+    filled = False
+display_square(side, sym, filled)
+-----------------------------------------------------------------------------------------------------
+
+def find_minimum(num1, num2, num3, num4, num5):
+    min_number = min(num1, num2, num3, num4, num5)
+    return min_number
+number1 = float(input("Введіть перше число: "))
+number2 = float(input("Введіть друге число: "))
+number3 = float(input("Введіть третє число: "))
+number4 = float(input("Введіть четверте число: "))
+number5 = float(input("Введіть п'яте число: "))
+min_value = find_minimum(number1, number2, number3, number4, number5)
+print(f"Мінімальне число серед введених: {min_value}")
+-------------------------------------------------------------------------
+
+def product_in_range(start, end):
+    if start > end:
+        start, end = end, start
+    product = 1
+    for num in range(start, end + 1):
+        product *= num
+
+    return product
+lower_bound = int(input("Введіть нижню межу діапазону: "))
+upper_bound = int(input("Введіть верхню межу діапазону: "))
+result = product_in_range(lower_bound, upper_bound)
+print(f"Добуток чисел у діапазоні від {lower_bound} до {upper_bound} дорівнює {result}")
+-----------------------------------------------------------------------------------------
+
+def count_digits(number):
+    number_str = str(number)
+    return len(number_str)
+num = int(input("Введіть число: "))
+digits_count = count_digits(num)
+print(f"Кількість цифр у числі {num} дорівнює {digits_count}")
+----------------------------------------------------------------
+
+def is_palindrome(number):
+    num_str = str(number)
+    if num_str == num_str[::-1]:
+        return True
+    else:
+        return False
+num1 = 123321
+num2 = 546645
+num3 = 421987
+print(f"{num1} є паліндромом: {is_palindrome(num1)}")
+print(f"{num2} є паліндромом: {is_palindrome(num2)}")
+print(f"{num3} є паліндромом: {is_palindrome(num3)}")
+---------------------------------------------------------
