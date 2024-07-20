@@ -1,0 +1,54 @@
+def main():
+    day_number = int(input("Введіть номер дня тижня (1-7): "))
+    days = ["понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота", "неділя"]
+    if day_number < 1 or day_number > 7:
+        print("Неправильний номер дня тижня.")
+    else:
+        day_name = days[day_number - 1]
+        print(f"День тижня з номером {day_number} — це {day_name}.")
+if __name__ == "__main__":
+    main()
+--------------------------------------------------------------------------------------------
+
+def main():
+    month_number = int(input("Введіть номер місяця (1-12): "))
+    months = [
+        "січень", "лютий", "березень", "квітень", "травень", "червень",
+        "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"
+    ]
+    if month_number < 1 or month_number > 12:
+        print("Неправильний номер місяця.")
+    else:
+        month_name = months[month_number - 1]
+        print(f"Місяць з номером {month_number} — це {month_name}.")
+if __name__ == "__main__":
+    main()
+-----------------------------------------------------------------------------------------------
+
+
+def main():
+    number = float(input("Введіть число: "))
+    if number > 0:
+        print("Number is positive")
+    elif number < 0:
+        print("Number is negative")
+    else:
+        print("Number is equal to zero")
+if __name__ == "__main__":
+    main()
+--------------------------------------------------------------------------------------------------
+
+
+
+def main():
+    number1 = float(input("Введіть перше число: "))
+    number2 = float(input("Введіть друге число: "))
+    if number1 == number2:
+        print("Числа рівні.")
+    else:
+        smaller = min(number1, number2)
+        larger = max(number1, number2)
+        print(f"Числа y порядку зростання: {smaller}, {larger}")
+if __name__ == "__main__":
+    main()
+___________________________________________________________________________________________________

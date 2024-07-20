@@ -1,0 +1,39 @@
+def evaluate_expression(expression):
+    operators = ['+', '-', '*', '/']
+    for operator in operators:
+        if operator in expression:
+            left_operand, right_operand = expression.split(operator)
+            left_operand = float(left_operand.strip())
+            right_operand = float(right_operand.strip())
+            if operator == '+':
+                return left_operand + right_operand
+            elif operator == '-':
+                return left_operand - right_operand
+            elif operator == '*':
+                return left_operand * right_operand
+            elif operator == '/':
+                if right_operand != 0:
+                    return left_operand / right_operand
+                else:
+                    return "Помилка: ділення на нуль"
+    return "Неправильний вираз"
+expression = input("Введіть арифметичний вираз: ")
+-------------------------------------------------------------------------
+
+import random
+def analyze_list(numbers):
+    min_element = min(numbers)
+    max_element = max(numbers)
+    negative_count = sum(1 for num in numbers if num < 0)
+    positive_count = sum(1 for num in numbers if num > 0)
+    zero_count = numbers.count(0)
+    return min_element, max_element, negative_count, positive_count, zero_count
+random_numbers = [random.randint(-100, 100) for _ in range(20)]
+min_element, max_element, negative_count, positive_count, zero_count = analyze_list(random_numbers)
+print(f"Список: {random_numbers}")
+print(f"Мінімальний елемент: {min_element}")
+print(f"Максимальний елемент: {max_element}")
+print(f"Кількість від'ємних елементів: {negative_count}")
+print(f"Кількість додатних елементів: {positive_count}")
+print(f"Кількість нулів: {zero_count}")
+_____________________________________________________________________________________________________

@@ -1,0 +1,57 @@
+def calculate_sum_and_average(numbers):
+    if len(numbers) == 0:
+        return 0, 0
+    total_sum = sum(numbers)
+    average = total_sum / len(numbers)
+    return total_sum, average
+start = int(input("Введіть перше число: "))
+end = int(input("Введіть друге число: "))
+even_numbers = [i for i in range(start, end + 1) if i % 2 == 0]
+odd_numbers = [i for i in range(start, end + 1) if i % 2 != 0]
+multiples_of_9 = [i for i in range(start, end + 1) if i % 9 == 0]
+even_sum, even_avg = calculate_sum_and_average(even_numbers)
+odd_sum, odd_avg = calculate_sum_and_average(odd_numbers)
+multiples_of_9_sum, multiples_of_9_avg = calculate_sum_and_average(multiples_of_9)
+print(f"Сума парних чисел: {even_sum}, Середньоарифметичне парних чисел: {even_avg}")
+print(f"Сума непарних чисел: {odd_sum}, Середньоарифметичне непарних чисел: {odd_avg}")
+print(f"Сума чисел, кратних 9: {multiples_of_9_sum}, Середньоарифметичне чисел, кратних 9: {multiples_of_9_avg}")
+------------------------------------------------------------------------------------------------------------------
+
+
+length = int(input("Введіть довжину лінії: "))
+symbol = input("Введіть символ для заповнення лінії: ")
+for _ in range(length):
+    print(symbol)
+---------------------------------------------------------
+
+while True:
+    number = int(input("Введіть число: "))
+    if number > 0:
+        print("Number is positive")
+    elif number < 0:
+        print("Number is negative")
+    elif number == 0:
+        print("Number is equal to zero")
+    if number == 7:
+        print("Good bye!")
+        break
+----------------------------------------------
+
+total_sum = 0
+max_number = None
+min_number = None
+
+while True:
+    number = int(input("Введіть число: "))
+    if number == 7:
+        print("Good bye!")
+        break
+    total_sum += number
+    if max_number is None or number > max_number:
+        max_number = number
+    if min_number is None or number < min_number:
+        min_number = number
+print(f"Сума введених чисел: {total_sum}")
+print(f"Максимальне введене число: {max_number}")
+print(f"Мінімальне введене число: {min_number}")
+---------------------------------------------------

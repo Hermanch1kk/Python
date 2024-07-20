@@ -1,0 +1,34 @@
+def is_palindrome(s):
+    s = s.lower().replace(' ', '')
+    return s == s[::-1]
+input_string = input("Введіть рядок: ")
+if is_palindrome(input_string):
+    print("Рядок є паліндромом")
+else:
+    print("Рядок не є паліндромом")
+----------------------------------------
+
+def change_reserved_words_to_uppercase(text, reserved_words):
+    words = text.split()
+    for i in range(len(words)):
+        if words[i].lower() in reserved_words:
+            words[i] = words[i].upper()
+    return ' '.join(words)
+text = input("Введіть текст: ")
+reserved_words_input = input("Введіть список зарезервованих слів через кому: ")
+reserved_words = [word.strip().lower() for word in reserved_words_input.split(',')]
+modified_text = change_reserved_words_to_uppercase(text, reserved_words)
+print("Змінений текст:", modified_text)
+--------------------------------------------------------------------------------------
+
+
+def count_sentences(text):
+    sentences = text.split('.')
+    sentences += text.split('!')
+    sentences += text.split('?')
+    sentences = [sentence.strip() for sentence in sentences if sentence.strip()]
+    return len(sentences)
+text = input("Введіть текст: ")
+num_sentences = count_sentences(text)
+print(f"Кількість речень y тексті: {num_sentences}")
+_____________________________________________________________________________________

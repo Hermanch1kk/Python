@@ -1,0 +1,58 @@
+def divide_numbers():
+    try:
+        dividend = float(input("Введіть ділене число: "))
+        divisor = float(input("Введіть дільник: "))
+        quotient = dividend / divisor
+        print(f"Результат ділення {dividend} на {divisor} дорівнює {quotient}")
+    except ValueError:
+        print("Помилка: Введені значення повинні бути числами")
+    except ZeroDivisionError:
+        print("Помилка: Ділення на нуль неможливе")
+divide_numbers()
+--------------------------------------------------------------------------------------
+
+
+
+
+
+def divide_numbers(dividend, divisor):
+    try:
+        result = dividend / divisor
+        return result
+    except ZeroDivisionError:
+        raise ZeroDivisionError("Ділення на нуль неможливе")
+try:
+    dividend = float(input("Введіть ділене число: "))
+    divisor = float(input("Введіть дільник: "))
+    result = divide_numbers(dividend, divisor)
+    print(f"Результат ділення {dividend} на {divisor} дорівнює {result}")
+except ValueError:
+    print("Помилка: Введені значення повинні бути числами")
+except ZeroDivisionError as e:
+    print(f"Помилка: {e}")
+----------------------------------------------------------------------------
+
+
+def convert_to_number(s):
+    try:
+        number = float(s)
+        return number
+    except ValueError:
+        return None 
+user_input = input("Введіть рядок для конвертації в число: ")
+result = convert_to_number(user_input)
+if result is not None:
+    print(f"Введений рядок успішно перетворено у число: {result}")
+else:
+    print("Помилка: Неможливо перетворити введений рядок на число")
+--------------------------------------------------------------------
+
+def convert_and_print(s):
+    try:
+        number = float(s)
+        print(f"Результат перетворення рядка '{s}' у число: {number}")
+    except ValueError:
+        print(f"Помилка: Неможливо перетворити рядок '{s}' на число")
+user_input = input("Введіть рядок для конвертації в число: ")
+convert_and_print(user_input)
+--------------------------------------------------------------------------
